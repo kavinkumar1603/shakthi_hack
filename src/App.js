@@ -1,34 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/Login';
+import Role from './components/Roleselect';
 
 function App() {
-  const [currentRoute, setCurrentRoute] = useState('home');
-
-  const navigateToLogin = () => {
-    setCurrentRoute('login');
-  };
-
-  const navigateToHome = () => {
-    setCurrentRoute('home');
-  };
-
-  const renderCurrentRoute = () => {
-    switch (currentRoute) {
-      case 'home':
-        return <Home onGetStarted={navigateToLogin} />;
-      case 'login':
-        return <Login onBack={navigateToHome} />;
-      default:
-        return <Home onGetStarted={navigateToLogin} />;
-    }
-  };
-
   return (
-    <div>
-      {renderCurrentRoute()}
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/select-role" element={<Role />} />
+          <Route path="/login/:role" element={<Login />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -260,9 +260,137 @@ body {
   line-height: 1.4;
 }
 
+.selected-role {
+  background: #e6f3ff;
+  border: 1px solid #4CAF50;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.selected-role p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+.role-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.role-content {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.role-title {
+  font-size: 36px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.role-subtitle {
+  font-size: 18px;
+  color: #a0a0a0;
+  margin-bottom: 48px;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.role-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.role-icon {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.role-card h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.role-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.role-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.role-card li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+  padding-left: 0;
+}
+
+.role-note {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+.login-role {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+  text-align: center;
+  padding: 8px 16px;
+  background: #f0f8ff;
+  border-radius: 6px;
+  border-left: 4px solid #FF4500;
+}
+
 @media (max-width: 1024px) {
   .features {
     gap: 40px;
+  }
+  
+  .role-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .role-title {
+    font-size: 28px;
   }
 }
 
